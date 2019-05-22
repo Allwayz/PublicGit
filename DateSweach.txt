@@ -1,0 +1,22 @@
+<form name="myform" action="newjsp.jsp">  
+            <p>Date：<input type="text" name="thedate" id="datepicker" placeholder="Please pick a date"></p>  
+            <input type="submit" name="button" value="Commit" />  
+        </form> 
+
+        <% 
+            String thedate;
+            if (request.getParameter("thedate")==null){
+                thedate="07/04/19";
+            } else {
+                thedate=request.getParameter("thedate");
+            }
+            %>
+
+
+    <sql:query var="result" dataSource="jdbc/myDatasource">
+        select * 
+        from daily_weather
+        where city_id = 1
+        and to_char(date_time, 'DD/MM/YY') = ?
+        <sql:param value='<%=thedate%>'  />
+    </sql:query>
