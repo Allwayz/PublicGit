@@ -20,3 +20,106 @@
         and to_char(date_time, 'DD/MM/YY') = ?
         <sql:param value='<%=thedate%>'  />
     </sql:query>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<select name="selectlocation" onchange="selectlocation('mune_x'+this.value)" class="selectclass">
+			<option value="1" selected="selected">Beijing</option>
+			<option value="2" >Tokyo</option>
+			<option value="3" >Seoul</option>
+			</select>
+                
+                    <div id="x1" style="display:block;">
+                    
+                        
+                    </div>
+                    
+                    
+                    
+                    <div id="x2" style="display:none;">
+                        
+                    </div>
+                    
+                    
+                    
+                    <div id="x3" style="display:none;">
+                        
+                    </div>
+               
+            
+            
+      
+
+
+
+
+<script type="text/javascript">
+		function selectlocation(Names){
+                   
+                    var Name;
+                    for (var i=1;i<4;i++){
+                        var tempname="mune_x"+i;
+                        var NewsHot="x"+i;
+                            if (Names===tempname){
+                                Nnews=document.getElementById(NewsHot);
+                                Nnews.style.display='';
+                            }else{
+                                Nnews=document.getElementById(NewsHot);
+                                Nnews.style.display='none';
+                                    }
+                                                }
+        
+                }            
+	</script>
